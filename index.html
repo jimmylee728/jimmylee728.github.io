@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Jimmy Lee — development and behavioral economist. Postdoctoral Fellow, Global Poverty Research Lab, Northwestern University.">
+<title>Jimmy Lee</title>
+<style>
+  :root{ --ink:#222; --muted:#555; --link:#1155cc; --rule:#e2e2e2; }
+  *{box-sizing:border-box}
+  html{ -webkit-text-size-adjust:100%; }
+  body{
+    margin:0;
+    color:var(--ink);
+    background:#fff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size:18px;
+    line-height:1.65;
+  }
+  a{ color:var(--link); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+
+  /* top nav */
+  header{ border-bottom:1px solid var(--rule); }
+  .nav{
+    max-width:820px; margin:0 auto; padding:18px 24px;
+    display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:10px;
+  }
+  .nav .name{ font-size:22px; font-weight:700; letter-spacing:.01em; }
+  .nav ul{ list-style:none; margin:0; padding:0; display:flex; gap:26px; }
+  .nav ul a{ color:var(--muted); font-size:16px; }
+  .nav ul a:hover{ color:var(--ink); text-decoration:none; }
+
+  /* body */
+  main{ max-width:820px; margin:0 auto; padding:40px 24px 64px; }
+  .top{ display:flex; gap:34px; align-items:flex-start; }
+  .photo{
+    flex:0 0 200px; width:200px; height:250px;
+    background:#f0efe9; border:1px solid var(--rule);
+    object-fit:cover; display:block;
+  }
+  .photo-fallback{
+    flex:0 0 200px; width:200px; height:250px;
+    background:#f0efe9; border:1px solid var(--rule);
+    display:flex; align-items:center; justify-content:center;
+    color:#aaa; font-size:14px; font-family:system-ui,sans-serif; text-align:center; padding:10px;
+  }
+  .intro{ flex:1; min-width:0; }
+  h1{ font-size:28px; margin:0 0 14px; font-weight:700; }
+  p{ margin:0 0 16px; }
+  .links{ margin:16px 0; }
+  .links a{ margin-right:18px; }
+  .refs{ margin-top:22px; font-size:16px; color:var(--muted); }
+  .refs .label{ display:block; margin-bottom:4px; }
+
+  @media (max-width:640px){
+    .top{ flex-direction:column; align-items:center; text-align:left; }
+    .photo,.photo-fallback{ margin-bottom:8px; }
+    main{ padding-top:28px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <span class="name">Jimmy Lee</span>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="personal.html">Personal</a></li>
+      <li><a href="Lee_CV.pdf">CV</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <div class="top">
+    <img class="photo" src="Headshot.jpg" alt="Jimmy Lee">
+
+    <div class="intro">
+      <h1>Welcome!</h1>
+      <p>I am a Postdoctoral Fellow in Economics at the Global Poverty Research Lab, Northwestern University, and I am currently visiting the Harvard Center for International Development. I received my Ph.D. in Economics from Northwestern University in 2024, under the supervision of Christopher Udry (Chair), Dean Karlan, and Lori Beaman.</p>
+
+      <div class="links">
+        <a href="mailto:jimmylee@u.northwestern.edu">Email</a>
+        <a href="Lee_CV.pdf">CV</a>
+      </div>
+
+      <p>Much of my work centers on school-based agricultural extension (SBAE)—a movement that transforms rural schools in developing countries into cost-effective hubs for diffusing agricultural technologies and raising school attendance, by combining inquiry-based science instruction, school farms as demonstration plots, and student home-farming projects. Since 2019 I have secured over $4.2 million across 12 grants to pilot and evaluate SBAE in Liberia. Given its demonstrated success, the program is now positioned to scale across rural Liberia, Côte d'Ivoire, and Kenya through 2035.</p>
+
+      <p>My research spans three areas. In <strong>development economics</strong>, I use large-scale randomized evaluations to study synergies between agriculture, rural education, and digital technologies, using the scaling of SBAE as a platform. In <strong>behavioral economics</strong>, I develop a framework, grounded in cognitive neuroscience, of how people jointly choose which mental models to activate and how much to invest in acquiring information, with applications in agriculture and education. In <strong>family and organizational economics</strong>, I study cohesion in rural household and community decision-making.</p>
+
+      <p>I am on the 2025/26 economics and public-policy job markets.</p>
+
+      <div class="refs">
+        <span class="label">References:</span>
+        <a href="https://www.udry.economics.northwestern.edu/">Christopher Udry</a> (Chair),
+        <a href="https://karlan.yale.edu/">Dean Karlan</a>,
+        <a href="https://sites.northwestern.edu/loribeaman/">Lori Beaman</a>,
+        <a href="https://sites.google.com/site/vesallnourani">Vesall Nourani</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>
