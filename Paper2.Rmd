@@ -1,0 +1,43 @@
+---
+title: |
+  \makebox[0.8\textwidth][c]{
+    \parbox{0.75\textwidth}{
+      \centering
+  Communicating Parents' Beliefs to Students as a Pivotal Component of Parental Engagement: 
+  \\
+  Evidence from School-based Agricultural Extension in Liberia
+  \\
+  \vspace{0.5em}
+  \large (see the latest version \href{https://www.dropbox.com/scl/fi/bizx7xitr4knpv0wvv4vg/SBAE_ParentsBeliefsAsNudge.pdf?rlkey=3ixi50dmq8ptmish78jk2ujiy&e=3&st=5yz30f6s&dl=0}{here})
+    }
+  }
+author: "Jimmy Lee, Northwestern University^[Correspondence: jimmylee@u.northwestern.edu. I thank my advisors Christopher Udry, Dean Karlan, and Lori Beaman for their comments and encouragement. I also thank seminar attendees at Northwestern University, National Graduate Institute for Policy Studies, Harvard Center for International Development, Harvard Graduate School of Education, and Oklahoma State University. I acknowledge financial support from the National Science Foundation, the FAO, the Weiss Fund, the Fund for Innovation in Development, Wellspring Foundation, USAID Development Innovation Ventures, the Global Poverty Research Lab and the Buffett Institute at Northwestern University. I thank the Liberian Ministries of Education and Agriculture for sharing administrative data, 4-H Liberia for sharing data on program implementation progress and costs, and Innovations for Poverty Action for excellent data collection work. I thank John Ma, Joshua Tabuena, and Asteris Dougalis for their excellent research assistance. The experiment received IRB approval from Northwestern (STU00211435), IPA (15307) and ACRE (19-11-185), and was pre-registered in the AEA registry (AEARCTR-0007841). All errors are mine.]"
+date: "`r format(Sys.Date(), '%B')` `r as.integer(format(Sys.Date(), '%d'))`, `r format(Sys.Date(), '%Y')`"
+documentclass: article
+classoption:
+  - 11pt
+geometry:
+  - margin=1in
+output:
+  bookdown::pdf_document2:
+    keep_tex: true
+    toc: false
+    number_sections: false
+    fig_caption: true
+    includes:
+      in_header: preamble4.tex
+header-includes:
+  # --- AEJ: Applied formatting: 11pt font, 1.5 line spacing, 1-inch margins ---
+  - \usepackage{setspace}
+  - \onehalfspacing
+# IMPORTANT: remove citation_package entirely (no biblatex)
+bibliography: references.bib
+csl: apa-no-sort.csl     # custom CSL (see next step)
+link-citations: true
+urlcolor: blue
+linkcolor: red
+---
+\pagenumbering{gobble}
+\begin{myabstract}
+When school programs require students to make changes on household farms, is informing parents about the program sufficient, or is further signaling their support to students needed? I study this question within a randomized evaluation of school-based agricultural extension (SBAE) in Liberia, where students are encouraged to take school farm training into a home farming project. After parents view a promotional video of the program, I randomize a nudge revealing to students their parents' optimism about their farm-management skills. Two years later, SBAE improves students' livelihoods only with the nudge: income rises 63\%, on-time school fee payment 43–47\%, and cost-effectiveness for attendance doubles. This study highlights a management aspect of agricultural technology adoption that responds strongly to nudges: even where parents respond to engagement by adopting promoted techniques, third-party communication is pivotal in shifting students away from assisting in subsistence farming.
+\end{myabstract}
