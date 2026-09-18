@@ -1,0 +1,43 @@
+---
+title: |
+  \makebox[0.8\textwidth][c]{
+    \parbox{0.75\textwidth}{
+      \centering
+  Miscategorization as an Information Friction? 
+  \\
+  Activating School-based Agricultural Extension in Liberia with Parental Engagement
+  \\
+  \vspace{0.5em}
+  \large (Job Market Paper: see the latest version \href{https://www.dropbox.com/scl/fi/tr2f35w3gumywrltt6vjz/PivotalEffects_SBAE.pdf?rlkey=zp7frjd0vvp3leflv7x3ecxcq&st=334m9yp8&dl=0}{here})
+    }
+  }
+author: "Jimmy Lee, Northwestern University^[Correspondence: jimmylee@u.northwestern.edu. I thank my advisors Christopher Udry, Dean Karlan, and Lori Beaman for their comments and encouragement. I also thank seminar attendees at Northwestern University, Harvard Center for International Development, Harvard Graduate School of Education, and Oklahoma State University. I acknowledge financial support from the National Science Foundation, the FAO, the Weiss Fund, the Fund for Innovation in Development, Wellspring Foundation, USAID Development Innovation Ventures, the Global Poverty Research Lab and the Buffett Institute at Northwestern University. I thank the Liberian Ministries of Education and Agriculture for sharing administrative data, 4-H Liberia for sharing data on program implementation progress and costs, and Innovations for Poverty Action for excellent data collection work. I thank John Ma, Joshua Tabuena, and Asteris Dougalis for their excellent research assistance. The experiment received IRB approval from Northwestern (STU00211435), IPA (15307) and ACRE (19-11-185), and was pre-registered in the AEA registry (AEARCTR-0006671). All errors are mine.]"
+date: "`r format(Sys.Date(), '%B')` `r as.integer(format(Sys.Date(), '%d'))`, `r format(Sys.Date(), '%Y')`"
+documentclass: article
+classoption:
+  - 11pt
+geometry:
+  - margin=1in
+output:
+  bookdown::pdf_document2:
+    keep_tex: true
+    toc: false
+    number_sections: false
+    fig_caption: yes
+    includes:
+      in_header: preamble4.tex
+header-includes:
+  # --- AEJ: Applied formatting: 11pt font, 1.5 line spacing, 1-inch margins ---
+  - \usepackage{setspace}
+  - \onehalfspacing
+# IMPORTANT: remove citation_package entirely (no biblatex)
+bibliography: references.bib
+csl: apa-no-sort.csl     # custom CSL (see next step)
+link-citations: true
+urlcolor: blue
+linkcolor: red
+---
+\pagenumbering{gobble}
+\begin{myabstract}
+Schools in developing countries often have weak ties with less-educated, poorly informed parents. This paper studies whether development program success hinges on strengthening these ties. In a three-year Liberian experiment across 197 schools, I evaluate school-based agricultural extension (SBAE) against control, cross-randomizing whether to engage parents via promotional videos and field days. SBAE improves targeted outcomes only when paired with engagement: students' households adopt 26–53\% more agricultural techniques, dropouts fall 4–5 percentage points per year, and absenteeism falls 28\%. The program is more cost-effective than most extension programs in Africa and over twice as cost-effective as conditional cash transfers in raising attendance. SBAE has strong positive training effects that are unaltered by parental engagement. However, without parental engagement, SBAE's diffusion mechanisms via school demonstration farms, home projects, and intra-household communication stay muted—technology adoption effects vanish, absenteeism rises 31\%, and parents reduce school visits below control. Parents' avoidance of information about a new program, plus reversed effects under engagement, poses a puzzle to Bayesian updating under a fixed prior. I attribute these patterns to parents conflating SBAE with a discredited school-garden preconception.
+\end{myabstract}
