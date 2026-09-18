@@ -15,7 +15,7 @@
 <meta name="description" content="Research by Jimmy Lee — school-based agricultural extension, development and behavioral economics.">
 <title>Jimmy Lee — Research</title>
 <style>
-  :root{ --ink:#1a1a1a; --muted:#555; --link:#2f5fb0; --rule:#e3e3e3; }
+  :root{ --ink:#1a1a1a; --muted:#555; --link:#1a4480; --rule:#e3e3e3; }
   *{box-sizing:border-box}
   body{ margin:0; color:var(--ink); background:#fff;
         font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
@@ -31,7 +31,16 @@
   main{ max-width:820px; margin:0 auto; padding:34px 24px 60px; }
   h2{ font-size:22px; font-weight:700; margin:34px 0 16px; padding-bottom:8px; border-bottom:1px solid var(--rule); }
   h2:first-of-type{ margin-top:0; }
-  .paper{ margin-bottom:22px; }
+  .paper{ margin-bottom:22px; display:flex; gap:16px; align-items:flex-start; }
+  .plabel{ flex:0 0 150px; background:#eef2f8; border-left:3px solid #1a4480; color:#1a3a66;
+           font-size:14px; line-height:1.4; padding:8px 12px; border-radius:4px; }
+  .plabel b{ font-weight:700; }
+  .plabel a{ color:#1a4480; }
+  .pbody{ flex:1 1 auto; min-width:0; }
+  @media (max-width:640px){
+    .paper{ flex-direction:column; gap:6px; }
+    .plabel{ flex-basis:auto; align-self:flex-start; }
+  }
   .ptitle-line{ margin-bottom:2px; }
   .ptitle{ font-size:18px; color:var(--link); }
   .ptitle.plain{ color:var(--ink); font-weight:600; }
@@ -72,19 +81,22 @@
   <h2>Working Papers</h2>
 
   <div class="paper">
+    <div class="plabel"><b>Lead Policy Paper.</b> With <a href="https://sites.northwestern.edu/christopherudry/">Christopher Udry</a></div>
+    <div class="pbody">
     <div class="ptitle-line"><span class="ptitle">Catalyzing Technology Diffusion in Africa through School-Based Agricultural Extension</span> <span class="soon">[paper coming soon]</span></div>
-    <div class="meta"><b>Lead Policy Paper.</b> With <a href="https://sites.northwestern.edu/christopherudry/">Christopher Udry</a></div>
     <div class="toggles">
       <details>
         <summary><span class="lbl">Abstract</span></summary>
         <div class="full">Efforts to raise agricultural productivity in sub-Saharan Africa are limited by substantial heterogeneity in which technologies are suitable across farms, while low perceived returns to schooling drive students to drop out. We develop a theoretical model of why school-based agricultural extension (SBAE) is particularly suited to address this dual problem. We build on the target-input model of learning about a technology’s appropriateness for one’s own land, adding two elements that vary the effectiveness of social learning: the signal the student observes on the school demonstration farm, and the signal the home project generates on the family’s own land. We derive three results. First, adoption and schooling are complements under SBAE: the same information raises both the value of using the new technology and the value of sending the child to school. Second, schooling acquires an option value on the farm: it raises the probability of adoption in a later season, so attendance can be optimal even where wage returns alone are low. Third, in the presence of a learning externality, SBAE aggregates information at a lower private cost than decentralized experimentation. We find strong support for these results in a randomized trial in Liberia.</div>
       </details>
     </div>
+    </div>
   </div>
 
   <div class="paper">
+    <div class="plabel"><b>Job Market Paper.</b></div>
+    <div class="pbody">
     <div class="ptitle-line"><a class="ptitle" href="https://www.dropbox.com/scl/fi/tr2f35w3gumywrltt6vjz/PivotalEffects_SBAE.pdf?rlkey=zp7frjd0vvp3leflv7x3ecxcq&e=1&st=334m9yp8&dl=0">Miscategorization as an Information Friction? Activating School-Based Agricultural Extension in Liberia with Parental Engagement</a></div>
-    <div class="meta"><b>Job Market Paper.</b></div>
     <div class="toggles">
       <details>
         <summary><span class="lbl">Abstract</span></summary>
@@ -92,12 +104,15 @@
       </details>
       <details>
         <summary><span class="lbl">Grants</span></summary>
-        <div class="full">Funded by Fund for Innovation in Development, USAID-DIV, Wellspring Foundation, and FAO.</div>
+        <div class="full">Fund for Innovation in Development ($1.2 mil), USAID-DIV ($395K), Wellspring Foundation ($192K), and FAO ($68K).</div>
       </details>
+    </div>
     </div>
   </div>
 
   <div class="paper">
+    <div class="plabel"><b>Behavioral theory.</b></div>
+    <div class="pbody">
     <div class="ptitle-line"><span class="ptitle">Endogenous Model Uncertainty and Curiosity under Neural Capacity Constraints</span> <span class="soon">[paper coming soon]</span></div>
     <div class="toggles">
       <details>
@@ -105,9 +120,12 @@
         <div class="full">In standard models of decision under ambiguity, the weights an agent places on competing models of the world are taken as given. This paper models contextual shifts in “mindsets” as a choice of how much model uncertainty to entertain: from a precise default model and a menu of latent alternatives, an agent chooses how much attention to pay to each and how much information to acquire. The choice is disciplined against motivated beliefs by a microfounded capacity constraint: the weight assigned to an alternative is capped by its likelihood relative to the default and to the other alternatives. Curiosity then arises endogenously as a drive to resolve the ambiguity that evidence creates. The model matches the documented regularities of neural remapping, with two results that matter for stimulating curiosity. First, framing of evidence matters because an alternative is activated only when the evidence makes the default indefensible against it, and threshold effects govern how attention shifts: gradually, abruptly, or not at all. Second, when several alternatives each beat the default, none may be activated, because evidence spread across rivals dilutes the weight each can carry. I apply the framework to the design of information interventions that aim to draw parents’ attention to a school-based agricultural extension program and to foster a conceptual understanding of pedagogy choice and learning efforts among teachers, students, and farmers.</div>
       </details>
     </div>
+    </div>
   </div>
 
   <div class="paper">
+    <div class="plabel"><b>Policy / empirics.</b></div>
+    <div class="pbody">
     <div class="ptitle-line"><a class="ptitle" href="https://www.dropbox.com/scl/fi/bizx7xitr4knpv0wvv4vg/SBAE_ParentsBeliefsAsNudge.pdf?rlkey=3ixi50dmq8ptmish78jk2ujiy&e=3&st=5yz30f6s&dl=0">Communicating Parents' Beliefs to Students as a Pivotal Component of Parental Engagement: Evidence from School-Based Agricultural Extension in Liberia</a></div>
     <div class="toggles">
       <details>
@@ -116,8 +134,9 @@
       </details>
       <details>
         <summary><span class="lbl">Grants</span></summary>
-        <div class="full">Funded by NSF, Weiss Fund, Global Poverty Research Lab, and the Buffett Institute for Global Affairs.</div>
+        <div class="full">NSF ($451K), Weiss Fund ($29K), Global Poverty Research Lab ($19K), and the Buffett Institute for Global Affairs ($5K).</div>
       </details>
+    </div>
     </div>
   </div>
 
@@ -125,12 +144,45 @@
 
   <div class="wipnote">Ongoing randomized experiments <span class="scaling">(scaling SBAE across Liberia, Côte d’Ivoire, and Kenya in 2026-35)</span></div>
 
-  <ul class="wiplist">
-    <li><span class="ptitle">Learning to Learn: Synergizing Inquiry-based Science and Agricultural Transformation</span> <span class="note">(with <a href="https://sites.google.com/site/vesallnourani">Vesall Nourani</a>, Harvard GSE; scheduled RCT within the scaling of SBAE in 2026-29)</span></li>
-    <li><span class="ptitle">Parental Engagement in School-based Agricultural Extension: Testing Mechanisms at Scale</span> <span class="note">(piloted interventions in 2025-26)</span></li>
-    <li><span class="ptitle">Parental Engagement and the Use of Unconditional Cash Transfers</span></li>
-    <li><span class="ptitle">Directed Technical Change under Data-Driven Farming Advice: An Empirical Framework</span> <span class="note">(grant from Weiss Fund; piloted survey method; planning RCT)</span></li>
-  </ul>
+  <div class="paper">
+    <div class="plabel"><b>Scheduled RCT.</b> With <a href="https://sites.google.com/site/vesallnourani">Vesall Nourani</a></div>
+    <div class="pbody">
+    <div class="ptitle-line"><span class="ptitle">Learning to Learn: Synergizing Inquiry-based Science and Agricultural Transformation</span></div>
+    <div class="toggles">
+      <details>
+        <summary><span class="lbl">Grants</span></summary>
+        <div class="full">Fund for Innovation in Development ($1.2 mil) and J-PAL Learning for All Initiative ($400K).</div>
+      </details>
+    </div>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="plabel"><b>Scheduled RCT.</b></div>
+    <div class="pbody">
+    <div class="ptitle-line"><span class="ptitle">Parental Engagement in School-based Agricultural Extension: Testing Mechanisms at Scale</span> <span class="note">(piloted interventions in 2025-26)</span></div>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="plabel"><b>Planning RCT.</b></div>
+    <div class="pbody">
+    <div class="ptitle-line"><span class="ptitle">Parental Engagement and the Use of Unconditional Cash Transfers</span></div>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="plabel"><b>Empirical Framework.</b></div>
+    <div class="pbody">
+    <div class="ptitle-line"><span class="ptitle">Directed Technical Change under Data-Driven Farming Advice: An Empirical Framework</span> <span class="note">(piloted survey method; planning RCT)</span></div>
+    <div class="toggles">
+      <details>
+        <summary><span class="lbl">Grants</span></summary>
+        <div class="full">Weiss Fund ($5K).</div>
+      </details>
+    </div>
+    </div>
+  </div>
 </main>
 </body>
 </html>
