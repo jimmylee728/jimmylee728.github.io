@@ -43,15 +43,15 @@
   .wiplist{ margin:4px 0 0; padding-left:22px; font-size:16px; }
   .wiplist li{ margin-bottom:5px; }
   .note{ color:var(--muted); font-style:italic; font-size:15px; }
-  details{ margin-top:6px; }
+  .toggles{ margin-top:8px; display:flex; gap:8px; flex-wrap:wrap; }
+  details{ margin:0; }
   details summary{ display:inline-block; cursor:pointer; list-style:none; user-select:none;
                    font-size:13px; color:var(--muted); border:1px solid #cfcfcf; border-radius:6px;
                    padding:2px 10px; }
   details summary::-webkit-details-marker{ display:none; }
-  details summary span{ display:none; }
-  details summary::before{ content:"Abstract \25BE"; }
-  details[open] summary::before{ content:"Abstract \25B4"; }
   details summary:hover{ border-color:#999; color:var(--ink); }
+  details summary .lbl::after{ content:" \25BE"; }
+  details[open] summary .lbl::after{ content:" \25B4"; }
   .full{ margin-top:9px; font-size:16px; color:#333; line-height:1.6; }
 </style>
 </head>
@@ -72,19 +72,19 @@
 
   <div class="paper">
     <div class="ptitle-line"><span class="ptitle">Catalyzing Technology Diffusion in Africa through School-Based Agricultural Extension</span> <span class="soon">[paper coming soon]</span></div>
-    <div class="meta">With <a href="https://sites.northwestern.edu/christopherudry/">Christopher Udry</a></div>
+    <div class="meta"><b>Lead Policy Paper.</b> With <a href="https://sites.northwestern.edu/christopherudry/">Christopher Udry</a></div>
     <details>
-      <summary><span>Abstract</span></summary>
+      <summary><span class="lbl">Abstract</span></summary>
       <div class="full">Efforts to raise agricultural productivity in sub-Saharan Africa are limited by substantial heterogeneity in which technologies are suitable across farms, while low perceived returns to schooling drive students to drop out. We develop a theoretical model of why school-based agricultural extension (SBAE) is particularly suited to address this dual problem. We build on the target-input model of learning about a technology’s appropriateness for one’s own land, adding two elements that vary the effectiveness of social learning: the signal the student observes on the school demonstration farm, and the signal the home project generates on the family’s own land. We derive three results. First, adoption and schooling are complements under SBAE: the same information raises both the value of using the new technology and the value of sending the child to school. Second, schooling acquires an option value on the farm: it raises the probability of adoption in a later season, so attendance can be optimal even where wage returns alone are low. Third, in the presence of a learning externality, SBAE aggregates information at a lower private cost than decentralized experimentation. We find strong support for these results in a randomized trial in Liberia.</div>
     </details>
   </div>
 
   <div class="paper">
     <div class="ptitle-line"><a class="ptitle" href="https://www.dropbox.com/scl/fi/tr2f35w3gumywrltt6vjz/PivotalEffects_SBAE.pdf?rlkey=zp7frjd0vvp3leflv7x3ecxcq&e=1&st=334m9yp8&dl=0">Miscategorization as an Information Friction? Activating School-Based Agricultural Extension in Liberia with Parental Engagement</a></div>
-    <div class="meta">Job Market Paper</div>
+    <div class="meta"><b>Job Market Paper.</b></div>
     <div class="meta"><span class="fund">Funded by Fund for Innovation in Development, USAID-DIV, Wellspring Foundation, and FAO</span></div>
     <details>
-      <summary><span>Abstract</span></summary>
+      <summary><span class="lbl">Abstract</span></summary>
       <div class="full">Schools in developing countries often have weak ties with less-educated, poorly informed parents. This paper studies whether development program success hinges on strengthening these ties. In a three-year Liberian experiment across 197 schools, I evaluate school-based agricultural extension (SBAE) against control, cross-randomizing whether to engage parents via promotional videos and field days. SBAE improves targeted outcomes only when paired with engagement: students’ households adopt 26–53% more agricultural techniques, dropouts fall 4–5 percentage points per year, and absenteeism falls 28%. The program is more cost-effective than most extension programs in Africa and over twice as cost-effective as conditional cash transfers in raising attendance. SBAE has strong positive training effects that are unaltered by parental engagement. However, without parental engagement, SBAE’s diffusion mechanisms via school demonstration farms, home projects, and intra-household communication stay muted—technology adoption effects vanish, absenteeism rises 31%, and parents reduce school visits below control. Parents’ avoidance of information about a new program, plus reversed effects under engagement, poses a puzzle to Bayesian updating under a fixed prior. I attribute these patterns to parents conflating SBAE with a discredited school-garden preconception.</div>
     </details>
   </div>
@@ -92,7 +92,7 @@
   <div class="paper">
     <div class="ptitle-line"><span class="ptitle">Endogenous Model Uncertainty and Curiosity under Neural Capacity Constraints</span> <span class="soon">[paper coming soon]</span></div>
     <details>
-      <summary><span>Abstract</span></summary>
+      <summary><span class="lbl">Abstract</span></summary>
       <div class="full">In standard models of decision under ambiguity, the weights an agent places on competing models of the world are taken as given. This paper models contextual shifts in “mindsets” as a choice of how much model uncertainty to entertain: from a precise default model and a menu of latent alternatives, an agent chooses how much attention to pay to each and how much information to acquire. The choice is disciplined against motivated beliefs by a microfounded capacity constraint: the weight assigned to an alternative is capped by its likelihood relative to the default and to the other alternatives. Curiosity then arises endogenously as a drive to resolve the ambiguity that evidence creates. The model matches the documented regularities of neural remapping, with two results that matter for stimulating curiosity. First, framing of evidence matters because an alternative is activated only when the evidence makes the default indefensible against it, and threshold effects govern how attention shifts: gradually, abruptly, or not at all. Second, when several alternatives each beat the default, none may be activated, because evidence spread across rivals dilutes the weight each can carry. I apply the framework to the design of information interventions that aim to draw parents’ attention to a school-based agricultural extension program and to foster a conceptual understanding of pedagogy choice and learning efforts among teachers, students, and farmers.</div>
     </details>
   </div>
@@ -101,7 +101,7 @@
     <div class="ptitle-line"><a class="ptitle" href="https://www.dropbox.com/scl/fi/bizx7xitr4knpv0wvv4vg/SBAE_ParentsBeliefsAsNudge.pdf?rlkey=3ixi50dmq8ptmish78jk2ujiy&e=3&st=5yz30f6s&dl=0">Communicating Parents' Beliefs to Students as a Pivotal Component of Parental Engagement: Evidence from School-Based Agricultural Extension in Liberia</a></div>
     <div class="meta"><span class="fund">Funded by NSF, Weiss Fund, Global Poverty Research Lab, and the Buffett Institute for Global Affairs</span></div>
     <details>
-      <summary><span>Abstract</span></summary>
+      <summary><span class="lbl">Abstract</span></summary>
       <div class="full">When school programs require students to introduce improved techniques on household farms, is informing students and parents about the program sufficient, or is further signaling parents’ support to students needed? I study this question within a randomized evaluation of school-based agricultural extension (SBAE) in Liberia, where students take school farm training into a home farming project. After parents view a promotional video of the program and students are encouraged to diffuse techniques to their parents, I randomize a nudge revealing to students their parents' optimism about their farm-management skills. Two years later, SBAE improves students' livelihoods only with the nudge: income rises 63%, on-time school fee payment 43–47%, and cost-effectiveness for attendance doubles. Analysis of mechanisms highlights a management aspect of agricultural technology adoption that can be addressed with nudges: even where parents become attentive to SBAE and adopt promoted techniques, third-party assurance is pivotal in shifting students away from assisting in subsistence farming.</div>
     </details>
   </div>
@@ -110,12 +110,8 @@
 
   <div class="wipnote">Ongoing randomized experiments <span class="scaling">(scaling SBAE across Liberia, Côte d’Ivoire, and Kenya in 2026-35)</span></div>
 
-  <div class="paper">
-    <div class="ptitle-line"><span class="ptitle plain">Learning to Learn: Synergizing Inquiry-based Science and Agricultural Transformation</span></div>
-    <div class="meta">With <a href="https://sites.google.com/site/vesallnourani">Vesall Nourani</a> (Harvard GSE) &middot; scheduled RCT within the scaling of SBAE in 2026-29</div>
-  </div>
-
   <ul class="wiplist">
+    <li>Learning to Learn: Synergizing Inquiry-based Science and Agricultural Transformation <span class="note">(with <a href="https://sites.google.com/site/vesallnourani">Vesall Nourani</a>, Harvard GSE; scheduled RCT within the scaling of SBAE in 2026-29)</span></li>
     <li>Parental Engagement in School-based Agricultural Extension: Testing Mechanisms at Scale <span class="note">(piloted interventions in 2025-26)</span></li>
     <li>Parental Engagement and the Use of Unconditional Cash Transfers</li>
     <li>Directed Technical Change under Data-Driven Farming Advice: An Empirical Framework <span class="note">(grant from Weiss Fund; piloted survey method; planning RCT)</span></li>
