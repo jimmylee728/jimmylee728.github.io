@@ -67,24 +67,32 @@
   details[open] summary .lbl::after{ content:" \25B4"; }
   details[open]{ width:100%; }
   .full{ margin-top:9px; font-size:16px; color:#333; line-height:1.6; }
-  /* abstract breakout panel (full-width reading) */
+  /* abstract modal overlay */
   .abs-btn{ display:inline-block; cursor:pointer; user-select:none;
             font-size:13px; color:var(--muted); border:1px solid #cfcfcf; border-radius:6px;
             padding:2px 10px; background:none; font-family:inherit; }
   .abs-btn:hover{ border-color:#999; color:var(--ink); }
   .abs-btn .lbl::after{ content:" \25BE"; }
-  .abs-btn.open .lbl::after{ content:" \25B4"; }
-  .abs-panel{ display:none; margin:0 0 26px; background:#faf9f6;
-              border:1px solid var(--rule); border-radius:8px; padding:22px 26px; }
-  .abs-panel.show{ display:block; }
-  .abs-panel .ap-tag{ font-size:11.5px; font-weight:700; letter-spacing:.04em;
-                      text-transform:uppercase; color:#5a6678; margin-bottom:4px; }
-  .abs-panel .ap-title{ font-size:17px; font-weight:600; line-height:1.3;
-                        letter-spacing:-0.012em; color:var(--link); margin-bottom:12px; }
-  .abs-panel .ap-text{ font-size:16px; color:#333; line-height:1.68; max-width:72ch; }
-  .abs-panel .ap-close{ float:right; cursor:pointer; border:none; background:none;
-                        font-size:18px; color:var(--muted); line-height:1; padding:2px 4px; }
-  .abs-panel .ap-close:hover{ color:var(--ink); }
+  .abs-overlay{ position:fixed; inset:0; z-index:1000; display:none;
+                background:rgba(26,26,26,.5); padding:40px 20px;
+                overflow-y:auto; -webkit-overflow-scrolling:touch; }
+  .abs-overlay.show{ display:flex; align-items:flex-start; justify-content:center; }
+  body.modal-open{ overflow:hidden; }
+  .abs-dialog{ position:relative; width:100%; max-width:720px; margin:auto;
+               background:#fff; border:1px solid var(--rule); border-radius:10px;
+               box-shadow:0 12px 40px rgba(0,0,0,.22); padding:30px 36px 34px;
+               animation:absPop .16s ease-out; }
+  @keyframes absPop{ from{ opacity:0; transform:translateY(8px); } to{ opacity:1; transform:none; } }
+  .abs-dialog .ap-tag{ font-size:11.5px; font-weight:700; letter-spacing:.04em;
+                       text-transform:uppercase; color:#5a6678; margin-bottom:5px; padding-right:28px; }
+  .abs-dialog .ap-title{ font-size:18px; font-weight:600; line-height:1.3;
+                         letter-spacing:-0.012em; color:var(--link); margin-bottom:14px; padding-right:28px; }
+  .abs-dialog .ap-text{ font-size:16px; color:#333; line-height:1.7; }
+  .abs-dialog .ap-close{ position:absolute; top:14px; right:16px; cursor:pointer;
+                         border:none; background:none; font-size:24px; color:var(--muted);
+                         line-height:1; padding:2px 6px; }
+  .abs-dialog .ap-close:hover{ color:var(--ink); }
+  @media (max-width:640px){ .abs-dialog{ padding:26px 22px 28px; } }
   /* two-stream layout */
   .streams{ display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:26px; }
   .scard{ background:#faf9f6; border:1px solid var(--rule); border-radius:8px; padding:20px 22px; }
@@ -128,10 +136,8 @@
     <div class="toggles">
       <button type="button" class="abs-btn" data-aptag="Job Market Paper" data-aptitle="Miscategorization as an Information Friction? Activating School-Based Agricultural Education in Liberia with Parental Engagement"><span class="lbl">Abstract</span></button>
       <div class="abs-src" hidden>Many developing countries have under-staffed agricultural extension systems, while rural households trade off children’s schooling with farm labor. This paper shows schools can become cost-effective hubs tackling these dual challenges, but only if parent-school linkages are strengthened. In a three-year Liberian experiment across 197 schools, I evaluate school-based agricultural education (SBAE)—a voluntary program training science teachers to integrate inquiry-based learning with student-led school demonstration farms and home farming projects—estimating intent-to-treat effects on randomly sampled students. I cross-randomize whether to inform parents about this integrated program via promotional videos and field days. SBAE improves targeted outcomes when paired with parental engagement: students’ households adopt 26–53% more yield-improving farming techniques, dropouts fall 4–5 percentage points per year, absenteeism falls 28%, and studying hours rise 22%. It is among the most cost-effective agricultural extension trials, and over twice as cost-effective for improving attendance as a conditional cash transfer benchmark. SBAE’s positive training effects on teachers and students are unaltered by parental engagement. However, without parental engagement, SBAE’s diffusion mechanisms—parents’ learning from school farms, home projects, intra-household communication—stay muted. Technology adoption effects vanish, absenteeism rises 31%, studying hours fall 20%, and parents disconnect: only a third of parents visit school farms in three years, visit frequency falls 12%, and parent–teacher meetings fall 39%. Parents’ persistent avoidance of information, plus sharply reversed responses under engagement, pose a puzzle. Bayesian updating, selective attention, and associative memory each fall short. I propose an integrative explanation: parental engagement shifts parents away from viewing agriculture and education as substitutes.</div>
-      <details>
-        <summary><span class="lbl">Grants</span></summary>
-        <div class="full">Fund for Innovation in Development ($1.2 mil), USAID-DIV ($395K), Wellspring Foundation ($192K), and FAO ($68K).</div>
-      </details>
+      <button type="button" class="abs-btn" data-aptag="Grants" data-aptitle="Miscategorization as an Information Friction? Activating School-Based Agricultural Education in Liberia with Parental Engagement"><span class="lbl">Grants</span></button>
+      <div class="abs-src" hidden>Fund for Innovation in Development ($1.2 mil), USAID-DIV ($395K), Wellspring Foundation ($192K), and FAO ($68K).</div>
     </div>
     </div>
     <div class="paper">
@@ -148,10 +154,8 @@
     <div class="toggles">
       <button type="button" class="abs-btn" data-aptag="Family Economics" data-aptitle="Can Communicating Parents' Beliefs to Students Be a Pivotal Component of Parental Engagement? Evidence from School-Based Agricultural Education in Liberia"><span class="lbl">Abstract</span></button>
       <div class="abs-src" hidden>When school programs require students to introduce improved techniques on household farms, is informing students and parents about the program sufficient, or is there a case for further signaling parents’ support to students? I study this question within a randomized evaluation of school-based agricultural education (SBAE) in Liberia, where students take school farm training into a home farming project. After parents view a promotional video of the program and students are encouraged to diffuse techniques to their parents, I randomize a nudge revealing to students their parents' optimism about their farm-management skills. Two years later, SBAE improves students' livelihoods only with the nudge: income rises 63%, on-time school fee payment 43–47%, and cost-effectiveness for attendance doubles. Analysis of mechanisms highlights a management aspect of agricultural technology adoption that can be addressed with nudges: even where parents become attentive to SBAE and adopt promoted techniques, third-party assurance can be pivotal in shifting students away from assisting in subsistence farming.</div>
-      <details>
-        <summary><span class="lbl">Grants</span></summary>
-        <div class="full">NSF ($451K), Weiss Fund ($29K), Global Poverty Research Lab ($19K), and the Buffett Institute for Global Affairs ($5K).</div>
-      </details>
+      <button type="button" class="abs-btn" data-aptag="Grants" data-aptitle="Can Communicating Parents' Beliefs to Students Be a Pivotal Component of Parental Engagement? Evidence from School-Based Agricultural Education in Liberia"><span class="lbl">Grants</span></button>
+      <div class="abs-src" hidden>NSF ($451K), Weiss Fund ($29K), Global Poverty Research Lab ($19K), and the Buffett Institute for Global Affairs ($5K).</div>
     </div>
     </div>
   </div>
@@ -169,19 +173,11 @@
       <div class="ptag wip">Ongoing RCT <span class="with">With <a href="https://sites.google.com/site/vesallnourani">Vesall Nourani</a></span></div>
       <div class="ptitle-line"><span class="ptitle">Learning to Learn: Synergizing Inquiry-based Science and Agricultural Transformation in Liberia</span></div>
     <div class="toggles">
-      <details>
-        <summary><span class="lbl">Grants</span></summary>
-        <div class="full">Fund for Innovation in Development ($1.2 mil) and J-PAL Learning for All Initiative ($400K).</div>
-      </details>
+      <button type="button" class="abs-btn" data-aptag="Grants" data-aptitle="Learning to Learn: Synergizing Inquiry-based Science and Agricultural Transformation in Liberia"><span class="lbl">Grants</span></button>
+      <div class="abs-src" hidden>Fund for Innovation in Development ($1.2 mil) and J-PAL Learning for All Initiative ($400K).</div>
     </div>
     </div>
   </div>
-  </div>
-  <div class="abs-panel" id="absPanel">
-    <button type="button" class="ap-close" id="absClose" aria-label="Close abstract">&times;</button>
-    <div class="ap-tag" id="absTag"></div>
-    <div class="ap-title" id="absTitle"></div>
-    <div class="ap-text" id="absText"></div>
   </div>
   <div class="ubox">
     <h3>Upcoming Work</h3>
@@ -189,49 +185,61 @@
       <div class="ptag wip">Planning RCT</div>
       <div class="ptitle-line"><span class="ptitle">School-based Agricultural Education, Parental Engagement, and the Use of Unconditional Cash Transfers</span></div>
       <div class="toggles">
-        <details>
-          <summary><span class="lbl">Grants</span></summary>
-          <div class="full">J-PAL Learning for All Initiative.</div>
-        </details>
+        <button type="button" class="abs-btn" data-aptag="Grants" data-aptitle="School-based Agricultural Education, Parental Engagement, and the Use of Unconditional Cash Transfers"><span class="lbl">Grants</span></button>
+        <div class="abs-src" hidden>J-PAL Learning for All Initiative.</div>
       </div>
     </div>
     <div class="paper">
       <div class="ptag wip">Empirical Framework</div>
       <div class="ptitle-line"><span class="ptitle">Directed Technical Change under Data-Driven Farming Advice: An Empirical Framework</span></div>
       <div class="toggles">
-        <details>
-          <summary><span class="lbl">Grants</span></summary>
-          <div class="full">Weiss Fund ($5K).</div>
-        </details>
+        <button type="button" class="abs-btn" data-aptag="Grants" data-aptitle="Directed Technical Change under Data-Driven Farming Advice: An Empirical Framework"><span class="lbl">Grants</span></button>
+        <div class="abs-src" hidden>Weiss Fund ($5K).</div>
       </div>
+    </div>
+  </div>
+
+  <div class="abs-overlay" id="absOverlay" role="dialog" aria-modal="true" aria-labelledby="absTitle">
+    <div class="abs-dialog" id="absDialog">
+      <button type="button" class="ap-close" id="absClose" aria-label="Close abstract">&times;</button>
+      <div class="ap-tag" id="absTag"></div>
+      <div class="ap-title" id="absTitle"></div>
+      <div class="ap-text" id="absText"></div>
     </div>
   </div>
 </main>
 <script>
 (function(){
-  var panel = document.getElementById('absPanel');
+  var overlay = document.getElementById('absOverlay');
+  var dialog = document.getElementById('absDialog');
   var tagEl = document.getElementById('absTag');
   var titleEl = document.getElementById('absTitle');
   var textEl = document.getElementById('absText');
-  var current = null;
-  function closePanel(){
-    panel.classList.remove('show');
-    if(current){ current.classList.remove('open'); current = null; }
+  function openModal(btn){
+    var src = btn.nextElementSibling;
+    if(!src || !src.classList.contains('abs-src')){
+      src = btn.parentNode.querySelector('.abs-src');
+    }
+    tagEl.textContent = btn.getAttribute('data-aptag') || '';
+    titleEl.textContent = btn.getAttribute('data-aptitle') || '';
+    textEl.textContent = src ? src.textContent : '';
+    overlay.classList.add('show');
+    document.body.classList.add('modal-open');
+    overlay.scrollTop = 0;
   }
-  document.getElementById('absClose').addEventListener('click', closePanel);
+  function closeModal(){
+    overlay.classList.remove('show');
+    document.body.classList.remove('modal-open');
+  }
+  document.getElementById('absClose').addEventListener('click', closeModal);
+  overlay.addEventListener('click', function(e){
+    if(!dialog.contains(e.target)){ closeModal(); }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && overlay.classList.contains('show')){ closeModal(); }
+  });
   document.querySelectorAll('.abs-btn').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var src = btn.parentNode.querySelector('.abs-src');
-      if(current === btn){ closePanel(); return; }
-      if(current){ current.classList.remove('open'); }
-      current = btn;
-      btn.classList.add('open');
-      tagEl.textContent = btn.getAttribute('data-aptag') || '';
-      titleEl.textContent = btn.getAttribute('data-aptitle') || '';
-      textEl.textContent = src ? src.textContent : '';
-      panel.classList.add('show');
-      panel.scrollIntoView({behavior:'smooth', block:'nearest'});
-    });
+    btn.addEventListener('click', function(){ openModal(btn); });
   });
 })();
 </script>
