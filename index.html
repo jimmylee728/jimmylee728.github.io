@@ -67,6 +67,10 @@
   .colh{ font-size:15px; font-weight:700; margin:0 0 9px; color:var(--ink);
          letter-spacing:.03em; text-transform:uppercase; }
   .col p{ margin:0; font-size:15px; line-height:1.55; }
+  .col p + p{ margin-top:11px; }
+  ol.methods{ margin:8px 0 11px; padding-left:22px; font-size:15px; line-height:1.5; }
+  ol.methods li{ margin:2px 0; }
+  .hl{ color:var(--link); font-weight:400; }
 
   @media (max-width:760px){
     .cols{ grid-template-columns:1fr; gap:18px; }
@@ -117,11 +121,20 @@
   <div class="cols">
     <div class="col">
       <h2 class="colh">Research Program</h2>
-      <p>Much of my work centers on <a href="https://agricorps.org/">school-based agricultural extension</a> (SBAE)—a movement that transforms rural schools in developing countries into cost-effective hubs for diffusing improved agricultural techniques and raising school attendance, by combining inquiry-based science instruction, school farms as demonstration plots, and student home-farming projects. Since 2019 I have secured over $4.2 million across 12 grants to pilot and evaluate SBAE in Liberia. Given its demonstrated success, the program is now positioned to scale across rural Liberia, Côte d'Ivoire, and Kenya through 2035.</p>
+      <p>Much of my work centers on <a href="https://agricorps.org/" style="text-decoration:underline">school-based agricultural extension</a> (SBAE)—a movement that transforms rural schools in developing countries into cost-effective hubs for diffusing improved agricultural techniques and raising school attendance, by combining:</p>
+      <ol class="methods">
+        <li>inquiry-based science instruction;</li>
+        <li>extra-curricular clubs;</li>
+        <li>school farms as demonstration plots; and</li>
+        <li>student home-farming projects.</li>
+      </ol>
+      <p>Since 2019 I have secured over <span class="hl">$4.2 million</span> across <span class="hl">12 grants</span> to pilot and evaluate SBAE in <span class="hl">Liberia</span>. Given its demonstrated success, the program is now positioned to scale across rural <span class="hl">Liberia</span>, <span class="hl">Côte d'Ivoire</span>, and <span class="hl">Kenya</span> <span class="hl">through 2035</span>.</p>
     </div>
     <div class="col">
       <h2 class="colh">Research Areas</h2>
-      <p>My research spans three areas. In <strong>development economics</strong>, I use large-scale randomized evaluations to study synergies between agriculture and rural education, building on the momentum of the rapidly scaling SBAE movement. In <strong>behavioral and labor economics</strong>, I develop a framework of endogenous curiosity—people choosing how much model uncertainty to entertain under cognitive limits. This has implications for the development of human capabilities (and benchmarking against large language models) and for designing interventions that stimulate curiosity about development programs, new agricultural techniques, and educational strategies. In <strong>family and organizational economics</strong>, I study intergenerational dynamics in rural household and community decision-making.</p>
+      <p><strong>Development economics.</strong> I use large-scale randomized evaluations to study <span class="hl">synergies</span> between agriculture and rural education, building on the momentum of the rapidly scaling SBAE movement.</p>
+      <p><strong>Behavioral and labor economics.</strong> I develop a framework of endogenous <span class="hl">curiosity</span>—people choosing how much model uncertainty to entertain under cognitive limits—with implications for designing interventions that stimulate curiosity about development programs, new agricultural techniques, and educational strategies. It also speaks to the development of <span class="hl">human capabilities</span> and to benchmarking them against <span class="hl">large language models</span>.</p>
+      <p><strong>Family and organizational economics.</strong> I study <span class="hl">intergenerational</span> dynamics in rural household and community decision-making.</p>
     </div>
   </div>
 </main>
