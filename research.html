@@ -67,6 +67,24 @@
   details[open] summary .lbl::after{ content:" \25B4"; }
   details[open]{ width:100%; }
   .full{ margin-top:9px; font-size:16px; color:#333; line-height:1.6; }
+  /* two-stream layout */
+  .streams{ display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:26px; }
+  .scard{ background:#faf9f6; border:1px solid var(--rule); border-radius:8px; padding:20px 22px; }
+  .scard > h3{ font-size:15px; font-weight:700; letter-spacing:.03em; text-transform:uppercase;
+               color:var(--ink); margin:0 0 4px; }
+  .scard > .sub{ font-size:13.5px; color:var(--muted); margin:0 0 16px; line-height:1.45; }
+  .scard .paper{ display:block; margin-bottom:18px; }
+  .scard .paper:last-child{ margin-bottom:0; }
+  .ptag{ display:inline-block; font-size:11.5px; font-weight:700; letter-spacing:.04em;
+         text-transform:uppercase; color:#5a6678; margin-bottom:3px; }
+  .ptag .with{ font-weight:400; text-transform:none; letter-spacing:0; color:#7a8699; }
+  .ptag.wip{ color:#9a6a1a; }
+  .ubox{ background:#faf9f6; border:1px solid var(--rule); border-radius:8px; padding:18px 22px; }
+  .ubox > h3{ font-size:15px; font-weight:700; letter-spacing:.03em; text-transform:uppercase;
+              color:var(--ink); margin:0 0 14px; }
+  .ubox .paper{ display:block; margin-bottom:14px; }
+  .ubox .paper:last-child{ margin-bottom:0; }
+  @media (max-width:760px){ .streams{ grid-template-columns:1fr; gap:18px; } }
 </style>
 </head>
 <body>
@@ -82,12 +100,13 @@
   </div>
 </header>
 <main>
-  <h2>Working Papers</h2>
-
-  <div class="paper">
-    <div class="plabel"><b>Job Market Paper.</b></div>
-    <div class="pbody">
-    <div class="ptitle-line"><span class="ptitle">Miscategorization as an Information Friction? Activating School-Based Agricultural Education in Liberia with Parental Engagement</span><div class="plinks"><a class="soon-red" href="SBAE_ParentalEngagement.pdf">[pdf: revised version coming soon!]</a><a class="soon-red" href="SBAE_ParentalEngagement_OnlineAppendix.pdf">[online appendix: revised version coming soon!]</a></div></div>
+  <h2>Research</h2>
+  <div class="streams">
+  <div class="scard">
+    <h3>School-Based Agricultural Education</h3>
+    <div class="paper">
+      <div class="ptag">Job Market Paper</div>
+      <div class="ptitle-line"><span class="ptitle">Miscategorization as an Information Friction? Activating School-Based Agricultural Education in Liberia with Parental Engagement</span><div class="plinks"><a class="soon-red" href="SBAE_ParentalEngagement.pdf">[pdf: revised version coming soon!]</a><a class="soon-red" href="SBAE_ParentalEngagement_OnlineAppendix.pdf">[online appendix: revised version coming soon!]</a></div></div>
     <div class="toggles">
       <details>
         <summary><span class="lbl">Abstract</span></summary>
@@ -99,25 +118,9 @@
       </details>
     </div>
     </div>
-  </div>
-
-  <div class="paper">
-    <div class="plabel"><b>Behavioral theory.</b></div>
-    <div class="pbody">
-    <div class="ptitle-line"><span class="ptitle">Endogenous Model Uncertainty and Curiosity under Cognitive Limits</span><div class="plinks"><a class="soon-red" href="Lee_Model_Uncertainty.pdf">[pdf: revised version coming soon!]</a><a class="soon-red" href="Lee_Model_Uncertainty_OnlineAppendix.pdf">[online appendix: revised version coming soon!]</a></div></div>
-    <div class="toggles">
-      <details>
-        <summary><span class="lbl">Abstract</span></summary>
-        <div class="full">What stimulates curiosity: the drive to seek the information required to explore new perspectives? Neuroscience suggests that people automatically classify situations through familiar mental models (e.g., a farmer attributing a neighbor’s high yield to good weather), entertaining alternatives when observations become difficult to reconcile with their initial interpretation. This paper treats such shifts in “mindsets” as a choice of how much model uncertainty to entertain. Each mental model pairs a prior with a view of how observable features combine to reveal the state. After an initial signal, a decision maker with a costless default and latent, less precise alternatives jointly chooses model weights and how many signals to acquire. The key discipline is an evidence constraint that bounds motivated beliefs: an alternative’s weight is capped by its Bayesian posterior. Curiosity emerges as the value of resolving the model uncertainty the decision maker entertains. Two results follow. First, the evidence constraint interacts with a complementarity between model weights and information acquisition to produce curiosity failures: people may never seek the evidence that would change their minds. Second, because decision makers can seek information and reason beyond what associative memory supplies, the framework isolates the influence of the information environment from hallmark behavioral effects in associative-memory models (e.g., Bordalo et al., 2025, 2026). Last, I endogenize the menu of mental models, formalizing creative and critical thinking as complementary forms of cognitive dimension reduction that together sustain curiosity. I illustrate the theory throughout with development programs, teacher training, and agricultural technology adoption.</div>
-      </details>
-    </div>
-    </div>
-  </div>
-
-  <div class="paper">
-    <div class="plabel"><b>Development Theory.</b> With <a href="https://sites.northwestern.edu/christopherudry/">Christopher Udry</a></div>
-    <div class="pbody">
-    <div class="ptitle-line"><span class="ptitle">Technology Adoption and Schooling as Complements: The Promise of School-Based Agricultural Education in Africa</span><div class="plinks"><span class="soon-red" data-href="SBAE_Complements.pdf">[paper available on request]</span></div></div>
+    <div class="paper">
+      <div class="ptag">Development Theory <span class="with">With <a href="https://sites.northwestern.edu/christopherudry/">Christopher Udry</a></span></div>
+      <div class="ptitle-line"><span class="ptitle">Technology Adoption and Schooling as Complements: The Promise of School-Based Agricultural Education in Africa</span><div class="plinks"><span class="soon-red" data-href="SBAE_Complements.pdf">[paper available on request]</span></div></div>
     <div class="toggles">
       <details>
         <summary><span class="lbl">Abstract</span></summary>
@@ -125,12 +128,9 @@
       </details>
     </div>
     </div>
-  </div>
-
-  <div class="paper">
-    <div class="plabel"><b>Policy / empirics.</b></div>
-    <div class="pbody">
-    <div class="ptitle-line"><span class="ptitle">Can Communicating Parents' Beliefs to Students Be a Pivotal Component of Parental Engagement? Evidence from School-Based Agricultural Education in Liberia</span><div class="plinks"><span class="soon-red" data-href="SBAE_Nudge.pdf">[paper available on request]</span></div></div>
+    <div class="paper">
+      <div class="ptag">Policy / Empirics</div>
+      <div class="ptitle-line"><span class="ptitle">Can Communicating Parents' Beliefs to Students Be a Pivotal Component of Parental Engagement? Evidence from School-Based Agricultural Education in Liberia</span><div class="plinks"><span class="soon-red" data-href="SBAE_Nudge.pdf">[paper available on request]</span></div></div>
     <div class="toggles">
       <details>
         <summary><span class="lbl">Abstract</span></summary>
@@ -143,15 +143,21 @@
     </div>
     </div>
   </div>
-
-  <h2>Work in progress</h2>
-
-  <div class="wipnote">Ongoing randomized experiments <span class="scaling">(scaling SBAE across Liberia, Côte d’Ivoire, and Kenya in 2026-35)</span></div>
-
-  <div class="paper">
-    <div class="plabel"><b>Ongoing RCT.</b> With <a href="https://sites.google.com/site/vesallnourani">Vesall Nourani</a></div>
-    <div class="pbody">
-    <div class="ptitle-line"><span class="ptitle">Learning to Learn: Synergizing Inquiry-based Science and Agricultural Transformation in Liberia</span></div>
+  <div class="scard">
+    <h3>Curiosity &amp; Capability Development</h3>
+    <div class="paper">
+      <div class="ptag">Behavioral Theory</div>
+      <div class="ptitle-line"><span class="ptitle">Endogenous Model Uncertainty and Curiosity under Cognitive Limits</span><div class="plinks"><a class="soon-red" href="Lee_Model_Uncertainty.pdf">[pdf: revised version coming soon!]</a><a class="soon-red" href="Lee_Model_Uncertainty_OnlineAppendix.pdf">[online appendix: revised version coming soon!]</a></div></div>
+    <div class="toggles">
+      <details>
+        <summary><span class="lbl">Abstract</span></summary>
+        <div class="full">What stimulates curiosity: the drive to seek the information required to explore new perspectives? Neuroscience suggests that people automatically classify situations through familiar mental models (e.g., a farmer attributing a neighbor’s high yield to good weather), entertaining alternatives when observations become difficult to reconcile with their initial interpretation. This paper treats such shifts in “mindsets” as a choice of how much model uncertainty to entertain. Each mental model pairs a prior with a view of how observable features combine to reveal the state. After an initial signal, a decision maker with a costless default and latent, less precise alternatives jointly chooses model weights and how many signals to acquire. The key discipline is an evidence constraint that bounds motivated beliefs: an alternative’s weight is capped by its Bayesian posterior. Curiosity emerges as the value of resolving the model uncertainty the decision maker entertains. Two results follow. First, the evidence constraint interacts with a complementarity between model weights and information acquisition to produce curiosity failures: people may never seek the evidence that would change their minds. Second, because decision makers can seek information and reason beyond what associative memory supplies, the framework isolates the influence of the information environment from hallmark behavioral effects in associative-memory models (e.g., Bordalo et al., 2025, 2026). Last, I endogenize the menu of mental models, formalizing creative and critical thinking as complementary forms of cognitive dimension reduction that together sustain curiosity. I illustrate the theory throughout with development programs, teacher training, and agricultural technology adoption.</div>
+      </details>
+    </div>
+    </div>
+    <div class="paper">
+      <div class="ptag wip">Ongoing RCT <span class="with">With <a href="https://sites.google.com/site/vesallnourani">Vesall Nourani</a></span></div>
+      <div class="ptitle-line"><span class="ptitle">Learning to Learn: Synergizing Inquiry-based Science and Agricultural Transformation in Liberia</span></div>
     <div class="toggles">
       <details>
         <summary><span class="lbl">Grants</span></summary>
@@ -160,24 +166,22 @@
     </div>
     </div>
   </div>
-
-  <div class="paper">
-    <div class="plabel"><b>Planning RCT.</b></div>
-    <div class="pbody">
-    <div class="ptitle-line"><span class="ptitle">School-based Agricultural Education, Parental Engagement, and the Use of Unconditional Cash Transfers</span></div>
-    </div>
   </div>
-
-  <div class="paper">
-    <div class="plabel"><b>Empirical Framework.</b></div>
-    <div class="pbody">
-    <div class="ptitle-line"><span class="ptitle">Directed Technical Change under Data-Driven Farming Advice: An Empirical Framework</span></div>
-    <div class="toggles">
-      <details>
-        <summary><span class="lbl">Grants</span></summary>
-        <div class="full">Weiss Fund ($5K).</div>
-      </details>
+  <div class="ubox">
+    <h3>Upcoming Work</h3>
+    <div class="paper">
+      <div class="ptag wip">Planning RCT</div>
+      <div class="ptitle-line"><span class="ptitle">School-based Agricultural Education, Parental Engagement, and the Use of Unconditional Cash Transfers</span></div>
     </div>
+    <div class="paper">
+      <div class="ptag wip">Empirical Framework</div>
+      <div class="ptitle-line"><span class="ptitle">Directed Technical Change under Data-Driven Farming Advice: An Empirical Framework</span></div>
+      <div class="toggles">
+        <details>
+          <summary><span class="lbl">Grants</span></summary>
+          <div class="full">Weiss Fund ($5K).</div>
+        </details>
+      </div>
     </div>
   </div>
 </main>
