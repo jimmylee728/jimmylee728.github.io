@@ -67,6 +67,24 @@
   details[open] summary .lbl::after{ content:" \25B4"; }
   details[open]{ width:100%; }
   .full{ margin-top:9px; font-size:16px; color:#333; line-height:1.6; }
+  /* abstract breakout panel (full-width reading) */
+  .abs-btn{ display:inline-block; cursor:pointer; user-select:none;
+            font-size:13px; color:var(--muted); border:1px solid #cfcfcf; border-radius:6px;
+            padding:2px 10px; background:none; font-family:inherit; }
+  .abs-btn:hover{ border-color:#999; color:var(--ink); }
+  .abs-btn .lbl::after{ content:" \25BE"; }
+  .abs-btn.open .lbl::after{ content:" \25B4"; }
+  .abs-panel{ display:none; margin:0 0 26px; background:#faf9f6;
+              border:1px solid var(--rule); border-radius:8px; padding:22px 26px; }
+  .abs-panel.show{ display:block; }
+  .abs-panel .ap-tag{ font-size:11.5px; font-weight:700; letter-spacing:.04em;
+                      text-transform:uppercase; color:#5a6678; margin-bottom:4px; }
+  .abs-panel .ap-title{ font-size:17px; font-weight:600; line-height:1.3;
+                        letter-spacing:-0.012em; color:var(--link); margin-bottom:12px; }
+  .abs-panel .ap-text{ font-size:16px; color:#333; line-height:1.68; max-width:72ch; }
+  .abs-panel .ap-close{ float:right; cursor:pointer; border:none; background:none;
+                        font-size:18px; color:var(--muted); line-height:1; padding:2px 4px; }
+  .abs-panel .ap-close:hover{ color:var(--ink); }
   /* two-stream layout */
   .streams{ display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:26px; }
   .scard{ background:#faf9f6; border:1px solid var(--rule); border-radius:8px; padding:20px 22px; }
@@ -108,10 +126,8 @@
       <div class="ptag">Job Market Paper</div>
       <div class="ptitle-line"><span class="ptitle">Miscategorization as an Information Friction? Activating School-Based Agricultural Education in Liberia with Parental Engagement</span><div class="plinks"><a class="soon-red" href="SBAE_ParentalEngagement.pdf">[pdf: revised version coming soon!]</a><a class="soon-red" href="SBAE_ParentalEngagement_OnlineAppendix.pdf">[online appendix: revised version coming soon!]</a></div></div>
     <div class="toggles">
-      <details>
-        <summary><span class="lbl">Abstract</span></summary>
-        <div class="full">Many developing countries have under-staffed agricultural extension systems, while rural households trade off children’s schooling with farm labor. This paper shows schools can become cost-effective hubs tackling these dual challenges, but only if parent-school linkages are strengthened. In a three-year Liberian experiment across 197 schools, I evaluate school-based agricultural education (SBAE)—a voluntary program training science teachers to integrate inquiry-based learning with student-led school demonstration farms and home farming projects—estimating intent-to-treat effects on randomly sampled students. I cross-randomize whether to inform parents about this integrated program via promotional videos and field days. SBAE improves targeted outcomes when paired with parental engagement: students’ households adopt 26–53% more yield-improving farming techniques, dropouts fall 4–5 percentage points per year, absenteeism falls 28%, and studying hours rise 22%. It is among the most cost-effective agricultural extension trials, and over twice as cost-effective for improving attendance as a conditional cash transfer benchmark. SBAE’s positive training effects on teachers and students are unaltered by parental engagement. However, without parental engagement, SBAE’s diffusion mechanisms—parents’ learning from school farms, home projects, intra-household communication—stay muted. Technology adoption effects vanish, absenteeism rises 31%, studying hours fall 20%, and parents disconnect: only a third of parents visit school farms in three years, visit frequency falls 12%, and parent–teacher meetings fall 39%. Parents’ persistent avoidance of information, plus sharply reversed responses under engagement, pose a puzzle. Bayesian updating, selective attention, and associative memory each fall short. I propose an integrative explanation: parental engagement shifts parents away from viewing agriculture and education as substitutes.</div>
-      </details>
+      <button type="button" class="abs-btn" data-aptag="Job Market Paper" data-aptitle="Miscategorization as an Information Friction? Activating School-Based Agricultural Education in Liberia with Parental Engagement"><span class="lbl">Abstract</span></button>
+      <div class="abs-src" hidden>Many developing countries have under-staffed agricultural extension systems, while rural households trade off children’s schooling with farm labor. This paper shows schools can become cost-effective hubs tackling these dual challenges, but only if parent-school linkages are strengthened. In a three-year Liberian experiment across 197 schools, I evaluate school-based agricultural education (SBAE)—a voluntary program training science teachers to integrate inquiry-based learning with student-led school demonstration farms and home farming projects—estimating intent-to-treat effects on randomly sampled students. I cross-randomize whether to inform parents about this integrated program via promotional videos and field days. SBAE improves targeted outcomes when paired with parental engagement: students’ households adopt 26–53% more yield-improving farming techniques, dropouts fall 4–5 percentage points per year, absenteeism falls 28%, and studying hours rise 22%. It is among the most cost-effective agricultural extension trials, and over twice as cost-effective for improving attendance as a conditional cash transfer benchmark. SBAE’s positive training effects on teachers and students are unaltered by parental engagement. However, without parental engagement, SBAE’s diffusion mechanisms—parents’ learning from school farms, home projects, intra-household communication—stay muted. Technology adoption effects vanish, absenteeism rises 31%, studying hours fall 20%, and parents disconnect: only a third of parents visit school farms in three years, visit frequency falls 12%, and parent–teacher meetings fall 39%. Parents’ persistent avoidance of information, plus sharply reversed responses under engagement, pose a puzzle. Bayesian updating, selective attention, and associative memory each fall short. I propose an integrative explanation: parental engagement shifts parents away from viewing agriculture and education as substitutes.</div>
       <details>
         <summary><span class="lbl">Grants</span></summary>
         <div class="full">Fund for Innovation in Development ($1.2 mil), USAID-DIV ($395K), Wellspring Foundation ($192K), and FAO ($68K).</div>
@@ -122,20 +138,16 @@
       <div class="ptag">Development Theory <span class="with">With <a href="https://sites.northwestern.edu/christopherudry/">Christopher Udry</a></span></div>
       <div class="ptitle-line"><span class="ptitle">Technology Adoption and Schooling as Complements: The Promise of School-Based Agricultural Education in Africa</span><div class="plinks"><span class="soon-red" data-href="SBAE_Complements.pdf">[paper available on request]</span></div></div>
     <div class="toggles">
-      <details>
-        <summary><span class="lbl">Abstract</span></summary>
-        <div class="full">In sub-Saharan Africa, wide heterogeneity across farms makes other households’ experience a noisy guide to what suits a household’s own farms, slowing technology diffusion, while low perceived returns to schooling drive students to drop out. We develop a model of why school-based agricultural education (SBAE), a holistic program in which trained science teachers integrate inquiry-based learning with student-led school demonstration farms and home farming projects, addresses this dual problem. Our model builds on the target-input framework, in which a household learns a technology’s suitability only by using it in production or by observing others who do. We add a third channel: the more of a child’s time the household devotes to schooling, the more precisely it learns from the school’s production signals. Schooling and technology adoption become complements. First, schooling carries an option value on the farm: by raising the probability of future adoption, it makes attendance worthwhile even where labor-market returns are low. Second, SBAE effectively subsidizes information acquisition by delivering information through schooling, whose cost households already bear for its educational returns, countering the under-supply of information in the presence of learning spillovers. We provide experimental evidence from Liberia that SBAE cost-effectively raises both agricultural technology adoption and school attendance. The model serves as a springboard for studying how SBAE can be strengthened by (i) developing teachers’ and students’ scientific capabilities to acquire and adapt agricultural knowledge, and (ii) turning schools into hubs that pool households’ dispersed knowledge and feed it back.</div>
-      </details>
+      <button type="button" class="abs-btn" data-aptag="Development Theory · with Christopher Udry" data-aptitle="Technology Adoption and Schooling as Complements: The Promise of School-Based Agricultural Education in Africa"><span class="lbl">Abstract</span></button>
+      <div class="abs-src" hidden>In sub-Saharan Africa, wide heterogeneity across farms makes other households’ experience a noisy guide to what suits a household’s own farms, slowing technology diffusion, while low perceived returns to schooling drive students to drop out. We develop a model of why school-based agricultural education (SBAE), a holistic program in which trained science teachers integrate inquiry-based learning with student-led school demonstration farms and home farming projects, addresses this dual problem. Our model builds on the target-input framework, in which a household learns a technology’s suitability only by using it in production or by observing others who do. We add a third channel: the more of a child’s time the household devotes to schooling, the more precisely it learns from the school’s production signals. Schooling and technology adoption become complements. First, schooling carries an option value on the farm: by raising the probability of future adoption, it makes attendance worthwhile even where labor-market returns are low. Second, SBAE effectively subsidizes information acquisition by delivering information through schooling, whose cost households already bear for its educational returns, countering the under-supply of information in the presence of learning spillovers. We provide experimental evidence from Liberia that SBAE cost-effectively raises both agricultural technology adoption and school attendance. The model serves as a springboard for studying how SBAE can be strengthened by (i) developing teachers’ and students’ scientific capabilities to acquire and adapt agricultural knowledge, and (ii) turning schools into hubs that pool households’ dispersed knowledge and feed it back.</div>
     </div>
     </div>
     <div class="paper">
-      <div class="ptag">Policy / Empirics</div>
+      <div class="ptag">Family Economics</div>
       <div class="ptitle-line"><span class="ptitle">Can Communicating Parents' Beliefs to Students Be a Pivotal Component of Parental Engagement? Evidence from School-Based Agricultural Education in Liberia</span><div class="plinks"><span class="soon-red" data-href="SBAE_Nudge.pdf">[paper available on request]</span></div></div>
     <div class="toggles">
-      <details>
-        <summary><span class="lbl">Abstract</span></summary>
-        <div class="full">When school programs require students to introduce improved techniques on household farms, is informing students and parents about the program sufficient, or is there a case for further signaling parents’ support to students? I study this question within a randomized evaluation of school-based agricultural education (SBAE) in Liberia, where students take school farm training into a home farming project. After parents view a promotional video of the program and students are encouraged to diffuse techniques to their parents, I randomize a nudge revealing to students their parents' optimism about their farm-management skills. Two years later, SBAE improves students' livelihoods only with the nudge: income rises 63%, on-time school fee payment 43–47%, and cost-effectiveness for attendance doubles. Analysis of mechanisms highlights a management aspect of agricultural technology adoption that can be addressed with nudges: even where parents become attentive to SBAE and adopt promoted techniques, third-party assurance can be pivotal in shifting students away from assisting in subsistence farming.</div>
-      </details>
+      <button type="button" class="abs-btn" data-aptag="Family Economics" data-aptitle="Can Communicating Parents' Beliefs to Students Be a Pivotal Component of Parental Engagement? Evidence from School-Based Agricultural Education in Liberia"><span class="lbl">Abstract</span></button>
+      <div class="abs-src" hidden>When school programs require students to introduce improved techniques on household farms, is informing students and parents about the program sufficient, or is there a case for further signaling parents’ support to students? I study this question within a randomized evaluation of school-based agricultural education (SBAE) in Liberia, where students take school farm training into a home farming project. After parents view a promotional video of the program and students are encouraged to diffuse techniques to their parents, I randomize a nudge revealing to students their parents' optimism about their farm-management skills. Two years later, SBAE improves students' livelihoods only with the nudge: income rises 63%, on-time school fee payment 43–47%, and cost-effectiveness for attendance doubles. Analysis of mechanisms highlights a management aspect of agricultural technology adoption that can be addressed with nudges: even where parents become attentive to SBAE and adopt promoted techniques, third-party assurance can be pivotal in shifting students away from assisting in subsistence farming.</div>
       <details>
         <summary><span class="lbl">Grants</span></summary>
         <div class="full">NSF ($451K), Weiss Fund ($29K), Global Poverty Research Lab ($19K), and the Buffett Institute for Global Affairs ($5K).</div>
@@ -149,10 +161,8 @@
       <div class="ptag">Behavioral Theory</div>
       <div class="ptitle-line"><span class="ptitle">Endogenous Model Uncertainty and Curiosity under Cognitive Limits</span><div class="plinks"><a class="soon-red" href="Lee_Model_Uncertainty.pdf">[pdf: revised version coming soon!]</a><a class="soon-red" href="Lee_Model_Uncertainty_OnlineAppendix.pdf">[online appendix: revised version coming soon!]</a></div></div>
     <div class="toggles">
-      <details>
-        <summary><span class="lbl">Abstract</span></summary>
-        <div class="full">What stimulates curiosity: the drive to seek the information required to explore new perspectives? Neuroscience suggests that people automatically classify situations through familiar mental models (e.g., a farmer attributing a neighbor’s high yield to good weather), entertaining alternatives when observations become difficult to reconcile with their initial interpretation. This paper treats such shifts in “mindsets” as a choice of how much model uncertainty to entertain. Each mental model pairs a prior with a view of how observable features combine to reveal the state. After an initial signal, a decision maker with a costless default and latent, less precise alternatives jointly chooses model weights and how many signals to acquire. The key discipline is an evidence constraint that bounds motivated beliefs: an alternative’s weight is capped by its Bayesian posterior. Curiosity emerges as the value of resolving the model uncertainty the decision maker entertains. Two results follow. First, the evidence constraint interacts with a complementarity between model weights and information acquisition to produce curiosity failures: people may never seek the evidence that would change their minds. Second, because decision makers can seek information and reason beyond what associative memory supplies, the framework isolates the influence of the information environment from hallmark behavioral effects in associative-memory models (e.g., Bordalo et al., 2025, 2026). Last, I endogenize the menu of mental models, formalizing creative and critical thinking as complementary forms of cognitive dimension reduction that together sustain curiosity. I illustrate the theory throughout with development programs, teacher training, and agricultural technology adoption.</div>
-      </details>
+      <button type="button" class="abs-btn" data-aptag="Behavioral Theory" data-aptitle="Endogenous Model Uncertainty and Curiosity under Cognitive Limits"><span class="lbl">Abstract</span></button>
+      <div class="abs-src" hidden>What stimulates curiosity: the drive to seek the information required to explore new perspectives? Neuroscience suggests that people automatically classify situations through familiar mental models (e.g., a farmer attributing a neighbor’s high yield to good weather), entertaining alternatives when observations become difficult to reconcile with their initial interpretation. This paper treats such shifts in “mindsets” as a choice of how much model uncertainty to entertain. Each mental model pairs a prior with a view of how observable features combine to reveal the state. After an initial signal, a decision maker with a costless default and latent, less precise alternatives jointly chooses model weights and how many signals to acquire. The key discipline is an evidence constraint that bounds motivated beliefs: an alternative’s weight is capped by its Bayesian posterior. Curiosity emerges as the value of resolving the model uncertainty the decision maker entertains. Two results follow. First, the evidence constraint interacts with a complementarity between model weights and information acquisition to produce curiosity failures: people may never seek the evidence that would change their minds. Second, because decision makers can seek information and reason beyond what associative memory supplies, the framework isolates the influence of the information environment from hallmark behavioral effects in associative-memory models (e.g., Bordalo et al., 2025, 2026). Last, I endogenize the menu of mental models, formalizing creative and critical thinking as complementary forms of cognitive dimension reduction that together sustain curiosity. I illustrate the theory throughout with development programs, teacher training, and agricultural technology adoption.</div>
     </div>
     </div>
     <div class="paper">
@@ -167,11 +177,23 @@
     </div>
   </div>
   </div>
+  <div class="abs-panel" id="absPanel">
+    <button type="button" class="ap-close" id="absClose" aria-label="Close abstract">&times;</button>
+    <div class="ap-tag" id="absTag"></div>
+    <div class="ap-title" id="absTitle"></div>
+    <div class="ap-text" id="absText"></div>
+  </div>
   <div class="ubox">
     <h3>Upcoming Work</h3>
     <div class="paper">
       <div class="ptag wip">Planning RCT</div>
       <div class="ptitle-line"><span class="ptitle">School-based Agricultural Education, Parental Engagement, and the Use of Unconditional Cash Transfers</span></div>
+      <div class="toggles">
+        <details>
+          <summary><span class="lbl">Grants</span></summary>
+          <div class="full">J-PAL Learning for All Initiative.</div>
+        </details>
+      </div>
     </div>
     <div class="paper">
       <div class="ptag wip">Empirical Framework</div>
@@ -185,5 +207,33 @@
     </div>
   </div>
 </main>
+<script>
+(function(){
+  var panel = document.getElementById('absPanel');
+  var tagEl = document.getElementById('absTag');
+  var titleEl = document.getElementById('absTitle');
+  var textEl = document.getElementById('absText');
+  var current = null;
+  function closePanel(){
+    panel.classList.remove('show');
+    if(current){ current.classList.remove('open'); current = null; }
+  }
+  document.getElementById('absClose').addEventListener('click', closePanel);
+  document.querySelectorAll('.abs-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var src = btn.parentNode.querySelector('.abs-src');
+      if(current === btn){ closePanel(); return; }
+      if(current){ current.classList.remove('open'); }
+      current = btn;
+      btn.classList.add('open');
+      tagEl.textContent = btn.getAttribute('data-aptag') || '';
+      titleEl.textContent = btn.getAttribute('data-aptitle') || '';
+      textEl.textContent = src ? src.textContent : '';
+      panel.classList.add('show');
+      panel.scrollIntoView({behavior:'smooth', block:'nearest'});
+    });
+  });
+})();
+</script>
 </body>
 </html>
